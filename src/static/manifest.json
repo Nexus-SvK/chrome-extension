@@ -1,0 +1,15 @@
+{
+    "manifest_version":3,
+    "name": "Rollup-React-TS-Extension",
+    "version": "0.0.1",
+    "description":"Extension dedicated to learn extensions with Rollup and React",
+    "author":"mtjkapral@protonmail.com",
+    "icons":{
+        "16":"brain.png",
+        "48":"brain.png",
+        "128":"brain.png"
+    },"action":{
+        "default_title":"Hello there! Ahh General Kenobi",
+        "default_popup":"popup.html"
+    }
+}
