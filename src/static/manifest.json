@@ -11,5 +11,9 @@
     },"action":{
         "default_title":"Hello there! Ahh General Kenobi",
         "default_popup":"popup.html"
-    }
+    },
+    "options_page":"options.html",
+    "permissions":[
+        "notifications"
+    ]
 }

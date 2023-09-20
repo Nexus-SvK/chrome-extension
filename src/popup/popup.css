@@ -16,3 +16,12 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.tab_navigation{
+    height: 10vh;
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 5px;
+    background-color: blue;
+    width: 100%;
+}
