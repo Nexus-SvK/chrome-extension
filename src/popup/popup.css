@@ -21,7 +21,63 @@ body{
     height: 10vh;
     display: inline-flex;
     align-items: center;
-    padding-inline: 5px;
-    background-color: blue;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu{
+    top: 0;
+	left: 0;
+	position: absolute;
+    height: 100%;
+	background-color: red;
+    transition: 1s;
+    width: 0%;
+   
+    /* display: none; */
+    transition: 1s;
+    overflow: hidden;
+}
+
+.menu.open{
+    width: calc(100%-2vh);
+    padding: 1vh;
+    /* display: block; */
+}
+
+.create-menu{
+    left:0;
+    bottom: 0;
+	position: absolute;
+    height: 0%;
+	background-color: red;
+    transition: 1s;
     width: 100%;
 }
+
+.create-menu.open{
+    height: calc(100%-1vh);
+    padding: 1vh;
+
+}
+
+.create-menu .fa-circle-xmark{
+    visibility: hidden;
+}
+
+.create-menu.open .fa-circle-xmark{
+    visibility: visible;
+}
+
+
+/* .menu .fa-circle-xmark{
+    visibility: hidden;
+}
+
+.menu.open .fa-circle-xmark{
+    visibility: visible;
+} */
+
+/* @keyframes{
+
+} */
