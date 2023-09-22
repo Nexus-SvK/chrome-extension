@@ -27,17 +27,17 @@ const config = {
     },
     // treeshaking: true,
     plugins: [
-        // terser(),
-        typescript({ tsconfig: 'tsconfig.json' }),
-        ...getPostCssPlugins(['popup', 'options']),
         copy({
             targets: [
                 {
-                    src: path.resolve('src/static/*'),
-                    dest: path.resolve('dist'),
+                    src: 'src/static/*',
+                    dest: 'dist',
                 },
             ],
         }),
+        // terser(),
+        typescript({ tsconfig: 'tsconfig.json' }),
+        ...getPostCssPlugins(['popup', 'options']),
         ...getHtmlPlugins(['popup', 'options']),
         babel({
             exclude: 'node_modules/**',
