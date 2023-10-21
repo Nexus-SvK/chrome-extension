@@ -1,0 +1,193 @@
+// $primary: #11998e;
+// $secondary: #38ef7d;
+// $white: #000000;
+// $gray: #9b9b9b;
+
+// .form__group {
+//     position: relative;
+//     padding: 15px 0 0;
+//     margin-top: 10px;
+//     width: 50%;
+// }
+
+// .form__field {
+//     font-family: inherit;
+//     width: 100%;
+//     border: 0;
+//     border-bottom: 2px solid $gray;
+//     outline: 0;
+//     font-size: 1.3rem;
+//     color: $white;
+//     padding: 7px 0;
+//     background: transparent;
+//     transition: border-color 0.2s;
+
+//     &::placeholder {
+//         color: transparent;
+//     }
+
+//     &:placeholder-shown~.form__label {
+//         font-size: 1.3rem;
+//         cursor: text;
+//         top: 20px;
+//     }
+// }
+
+// .form__label {
+//     position: absolute;
+//     top: 0;
+//     display: block;
+//     transition: 0.2s;
+//     font-size: 1rem;
+//     color: $gray;
+// }
+
+// .form__field:focus {
+//     ~.form__label {
+//         position: absolute;
+//         top: 0;
+//         display: block;
+//         transition: 0.2s;
+//         font-size: 1rem;
+//         color: $primary;
+//         font-weight: 700;
+//     }
+
+//     padding-bottom: 6px;
+//     font-weight: 700;
+//     border-width: 3px;
+//     border-image: linear-gradient(to right, $primary, $secondary);
+//     border-image-slice: 1;
+// }
+
+// /* reset input */
+// .form__field {
+
+//     &:required,
+//     &:invalid {
+//         box-shadow: none;
+//     }
+// }
+
+// /* demo */
+// // body {
+// //     font-family: 'Poppins', sans-serif;
+// //     display: flex;
+// //     flex-direction: column;
+// //     justify-content: center;
+// //     align-items: center;
+// //     min-height: 100vh;
+// //     font-size: 1.5rem;
+// //     background-color: #222222;
+// // }
+
+$inputBox_background: #e1d5d6;
+$inputBox_color: #00dfc4;
+
+@mixin inputGeneral() {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    background: #fafafa;
+    border-radius: 5px;
+    outline: none;
+    color: #000;
+    font-size: 1em;
+
+    &:focus {
+        border: 1.5px solid $inputBox_color;
+    }
+
+    &:valid~span,
+    &:focus~span {
+        display: visible;
+        color: #fff;
+        transform: translateX(10px) translateY(-5.5px);
+        font-size: 0.65em;
+        padding: 0 10px;
+        background-color: $inputBox_color;
+        border-radius: 1.5px;
+        letter-spacing: 0.2em;
+    }
+}
+
+
+.inputBox {
+    position: relative;
+    width: 250px;
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #bbb;
+        background: #fafafa;
+        border-radius: 5px;
+        outline: none;
+        color: #000;
+        font-size: 1em;
+
+        &[type=date]~span {
+            opacity: 0;
+        }
+
+        &:focus {
+            border: 1.5px solid $inputBox_color;
+        }
+
+        &:valid~span,
+        &:focus~span {
+            opacity: 1;
+            color: #fff;
+            transform: translateX(10px) translateY(-5.5px);
+            font-size: 0.65em;
+            padding: 0 10px;
+            background-color: $inputBox_color;
+            border-radius: 1.5px;
+            letter-spacing: 0.2em;
+        }
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color: #999;
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+}
+
+// &[type=date]:valid~span,
+// &[type=date]:focus~span,
+
+// &[type=date]~span {
+//     display: none;
+// }
+
+// .inputBox {
+//     width: 250px;
+//     border-radius: 5px;
+//     outline: none;
+//     background-color: $inputBox_background;
+//     color: $inputBox_color;
+//     border-width: 1px solid $inputBox_color;
+
+//     input {
+//         width: 100%;
+//         background-color: transparent;
+//         border: none;
+//         outline: none;
+//         padding: 10px;
+//         font-size: 1em;
+//     }
+
+//     span {
+//         padding: 10px;
+//         position: absolute;
+//         left: 0;
+//         font-size: 1em;
+//     }
+// }

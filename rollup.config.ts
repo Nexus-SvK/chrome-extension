@@ -17,7 +17,7 @@ const config = {
     input: {
         popup: path.resolve('src/popup/Popup.tsx'),
         options: path.resolve('src/options/Options.tsx'),
-        // background: path.resolve('src/background/service-worker.ts'),
+        background: path.resolve('src/background/service-worker.ts'),
         // contentScript: path.resolve('src/contentScript/contentScript.ts'),
     } as InputConfig,
     output: {
@@ -28,6 +28,7 @@ const config = {
     // treeshaking: true,
     plugins: [
         copy({
+            copySync: true,
             targets: [
                 {
                     src: 'src/static/*',
@@ -42,6 +43,7 @@ const config = {
         babel({
             exclude: 'node_modules/**',
             presets: ['@babel/preset-react'],
+            babelHelpers: 'bundled'
         }),
         replace({
             'process.env.NODE_ENV': JSON.stringify('development'),
@@ -76,13 +78,14 @@ function getHtmlPlugins(chunks: string[]) {
 function getPostCssPlugins(chunks: string[]) {
     return chunks.map((chunk) =>
         postcss({
-            include: `**/src/${chunk}/${chunk}.css`,
+            include: [`**/src/${chunk}/**`, `**/src/${chunk}/**`],
             sourceMap: true,
             minimize: true, // Extract CSS to a separate file
             modules: {
                 generateScopedName: (name: string) => name,
             },
-            extensions: ['.css'],
+            // exec: true,
+            extensions: ['.scss', '.css'],
             exclude: path.resolve('dist/[name].css'),
         })
     );

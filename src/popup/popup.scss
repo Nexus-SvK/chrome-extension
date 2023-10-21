@@ -1,3 +1,5 @@
+// @import '_text-field.scss';-
+
 * {
     margin: 0;
     padding: 0;
@@ -33,17 +35,16 @@ body {
     background-color: red;
     transition: 1s;
     width: 0%;
-
-    /* display: none; */
     transition: 1s;
     overflow: hidden;
+
+    &.open {
+        width: calc(100% - 2vh);
+        padding: 1vh;
+    }
 }
 
-.menu.open {
-    width: calc(100%-2vh);
-    padding: 1vh;
-    /* display: block; */
-}
+
 
 .create-menu {
     left: 0;
@@ -51,37 +52,13 @@ body {
     position: absolute;
     opacity: 0;
     height: 0%;
-    background-color: red;
+    background-color: white;
     transition: 1s;
     width: 100%;
+
+    &.open {
+        opacity: 1;
+        height: calc(100% - 1vh);
+        padding: 1vh;
+    }
 }
-
-.create-menu.open {
-    opacity: 1;
-    height: calc(100%-1vh);
-    padding: 1vh;
-
-}
-
-/* .create-menu .fa-circle-xmark {
-    opacity: 0;
-    transition: 1s;
-}
-
-.create-menu.open .fa-circle-xmark {
-    opacity: 1;
-    transition: 1s;
-} */
-
-
-/* .menu .fa-circle-xmark{
-    visibility: hidden;
-}
-
-.menu.open .fa-circle-xmark{
-    visibility: visible;
-} */
-
-/* @keyframes{
-
-} */
